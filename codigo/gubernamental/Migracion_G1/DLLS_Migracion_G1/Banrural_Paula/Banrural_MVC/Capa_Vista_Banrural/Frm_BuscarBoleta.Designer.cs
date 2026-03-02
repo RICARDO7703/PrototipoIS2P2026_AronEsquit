@@ -39,13 +39,13 @@ namespace Capa_Vista_Banrural
             this.Pnl_separacion = new System.Windows.Forms.Panel();
             this.Pic_Banrural = new System.Windows.Forms.PictureBox();
             this.Btn_BuscarDpi = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv_Boletas = new System.Windows.Forms.DataGridView();
             this.Txt_Apellidos = new System.Windows.Forms.TextBox();
             this.Lbl_Apellidos = new System.Windows.Forms.Label();
             this.Txt_Nombres = new System.Windows.Forms.TextBox();
             this.Lbl_Nombres = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Banrural)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Boletas)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Dpi
@@ -56,6 +56,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Dpi.Name = "Txt_Dpi";
             this.Txt_Dpi.Size = new System.Drawing.Size(363, 27);
             this.Txt_Dpi.TabIndex = 10;
+            this.Txt_Dpi.TextChanged += new System.EventHandler(this.Txt_Dpi_TextChanged);
             // 
             // Lbl_Dpi
             // 
@@ -139,16 +140,18 @@ namespace Capa_Vista_Banrural
             this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 47);
             this.Btn_BuscarDpi.TabIndex = 28;
             this.Btn_BuscarDpi.UseVisualStyleBackColor = true;
+            this.Btn_BuscarDpi.Click += new System.EventHandler(this.Btn_BuscarDpi_Click);
             // 
-            // dataGridView1
+            // Dgv_Boletas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 339);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 402);
-            this.dataGridView1.TabIndex = 29;
+            this.Dgv_Boletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Boletas.Location = new System.Drawing.Point(16, 339);
+            this.Dgv_Boletas.Name = "Dgv_Boletas";
+            this.Dgv_Boletas.RowHeadersWidth = 51;
+            this.Dgv_Boletas.RowTemplate.Height = 24;
+            this.Dgv_Boletas.Size = new System.Drawing.Size(904, 402);
+            this.Dgv_Boletas.TabIndex = 29;
+            this.Dgv_Boletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Boletas_CellContentClick);
             // 
             // Txt_Apellidos
             // 
@@ -159,6 +162,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Apellidos.Name = "Txt_Apellidos";
             this.Txt_Apellidos.Size = new System.Drawing.Size(567, 27);
             this.Txt_Apellidos.TabIndex = 33;
+            this.Txt_Apellidos.TextChanged += new System.EventHandler(this.Txt_Apellidos_TextChanged);
             // 
             // Lbl_Apellidos
             // 
@@ -180,6 +184,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Nombres.Name = "Txt_Nombres";
             this.Txt_Nombres.Size = new System.Drawing.Size(567, 27);
             this.Txt_Nombres.TabIndex = 31;
+            this.Txt_Nombres.TextChanged += new System.EventHandler(this.Txt_Nombres_TextChanged);
             // 
             // Lbl_Nombres
             // 
@@ -202,7 +207,7 @@ namespace Capa_Vista_Banrural
             this.Controls.Add(this.Lbl_Apellidos);
             this.Controls.Add(this.Txt_Nombres);
             this.Controls.Add(this.Lbl_Nombres);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgv_Boletas);
             this.Controls.Add(this.Btn_BuscarDpi);
             this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.Btn_Ayuda);
@@ -216,7 +221,7 @@ namespace Capa_Vista_Banrural
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_BuscarBoleta";
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Banrural)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Boletas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +238,7 @@ namespace Capa_Vista_Banrural
         private System.Windows.Forms.Panel Pnl_separacion;
         private System.Windows.Forms.PictureBox Pic_Banrural;
         private System.Windows.Forms.Button Btn_BuscarDpi;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv_Boletas;
         private System.Windows.Forms.TextBox Txt_Apellidos;
         private System.Windows.Forms.Label Lbl_Apellidos;
         private System.Windows.Forms.TextBox Txt_Nombres;

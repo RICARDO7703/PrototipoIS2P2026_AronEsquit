@@ -34,5 +34,70 @@ namespace Capa_Vista_Banrural
         {
             this.Close();
         }
+
+        private void Txt_Dpi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_BuscarDpi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Nombres_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Apellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Edad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_NoBoleta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_GenerarBoleta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_TipoPasaporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Duracion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_TotalPagar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_LimpiarTodo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
