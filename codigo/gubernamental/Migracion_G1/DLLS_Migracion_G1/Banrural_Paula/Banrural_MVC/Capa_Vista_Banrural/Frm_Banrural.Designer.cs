@@ -271,6 +271,7 @@ namespace Capa_Vista_Banrural
             // 
             // Cmb_TipoPasaporte
             // 
+            this.Cmb_TipoPasaporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_TipoPasaporte.FormattingEnabled = true;
             this.Cmb_TipoPasaporte.Location = new System.Drawing.Point(187, 446);
             this.Cmb_TipoPasaporte.Name = "Cmb_TipoPasaporte";
@@ -280,6 +281,7 @@ namespace Capa_Vista_Banrural
             // 
             // Cmb_Duracion
             // 
+            this.Cmb_Duracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_Duracion.FormattingEnabled = true;
             this.Cmb_Duracion.Location = new System.Drawing.Point(733, 446);
             this.Cmb_Duracion.Name = "Cmb_Duracion";
@@ -319,6 +321,7 @@ namespace Capa_Vista_Banrural
             this.Txt_TotalPagar.Name = "Txt_TotalPagar";
             this.Txt_TotalPagar.Size = new System.Drawing.Size(863, 29);
             this.Txt_TotalPagar.TabIndex = 23;
+            this.Txt_TotalPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_TotalPagar.TextChanged += new System.EventHandler(this.Txt_TotalPagar_TextChanged);
             // 
             // Btn_Guardar

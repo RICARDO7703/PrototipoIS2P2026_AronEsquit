@@ -292,6 +292,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
 
         private void Btn_LimpiarTodo_Click(object sender, EventArgs e)
         {
+            // Limpiar TextBox
             Txt_Dpi.Clear();
             Txt_Nombres.Clear();
             Txt_Apellidos.Clear();
@@ -299,10 +300,18 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             Txt_NoBoleta.Clear();
             Txt_TotalPagar.Clear();
 
+            // Resetear variable
             _idCiudadano = 0;
 
-            // Recarga tipos y deja combos limpios
+            // Resetear Combo Tipo
+            Cmb_TipoPasaporte.SelectedIndex = -1;
+
+            // Limpiar Combo Duración
             Cmb_Duracion.DataSource = null;
+            Cmb_Duracion.Items.Clear();
+
+            // Enfocar nuevamente DPI
+            Txt_Dpi.Focus();
         }
     }
 }
