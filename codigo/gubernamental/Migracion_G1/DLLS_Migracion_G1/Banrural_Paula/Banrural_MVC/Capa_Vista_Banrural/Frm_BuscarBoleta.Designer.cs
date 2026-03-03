@@ -44,6 +44,9 @@ namespace Capa_Vista_Banrural
             this.Lbl_Apellidos = new System.Windows.Forms.Label();
             this.Txt_Nombres = new System.Windows.Forms.TextBox();
             this.Lbl_Nombres = new System.Windows.Forms.Label();
+            this.Btn_LimpiarTodo = new System.Windows.Forms.Button();
+            this.Btn_EliminarBoleta = new System.Windows.Forms.Button();
+            this.Btn_ModificarBoleta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Banrural)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Boletas)).BeginInit();
             this.SuspendLayout();
@@ -135,9 +138,9 @@ namespace Capa_Vista_Banrural
             // 
             this.Btn_BuscarDpi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_BuscarDpi.Image = ((System.Drawing.Image)(resources.GetObject("Btn_BuscarDpi.Image")));
-            this.Btn_BuscarDpi.Location = new System.Drawing.Point(446, 158);
+            this.Btn_BuscarDpi.Location = new System.Drawing.Point(446, 154);
             this.Btn_BuscarDpi.Name = "Btn_BuscarDpi";
-            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 47);
+            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 51);
             this.Btn_BuscarDpi.TabIndex = 28;
             this.Btn_BuscarDpi.UseVisualStyleBackColor = true;
             this.Btn_BuscarDpi.Click += new System.EventHandler(this.Btn_BuscarDpi_Click);
@@ -197,12 +200,47 @@ namespace Capa_Vista_Banrural
             this.Lbl_Nombres.Text = "Nombres:";
             this.Lbl_Nombres.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // Btn_LimpiarTodo
+            // 
+            this.Btn_LimpiarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_LimpiarTodo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_LimpiarTodo.Image")));
+            this.Btn_LimpiarTodo.Location = new System.Drawing.Point(512, 154);
+            this.Btn_LimpiarTodo.Name = "Btn_LimpiarTodo";
+            this.Btn_LimpiarTodo.Size = new System.Drawing.Size(60, 51);
+            this.Btn_LimpiarTodo.TabIndex = 34;
+            this.Btn_LimpiarTodo.UseVisualStyleBackColor = true;
+            // 
+            // Btn_EliminarBoleta
+            // 
+            this.Btn_EliminarBoleta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EliminarBoleta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_EliminarBoleta.Image")));
+            this.Btn_EliminarBoleta.Location = new System.Drawing.Point(860, 282);
+            this.Btn_EliminarBoleta.Name = "Btn_EliminarBoleta";
+            this.Btn_EliminarBoleta.Size = new System.Drawing.Size(60, 51);
+            this.Btn_EliminarBoleta.TabIndex = 35;
+            this.Btn_EliminarBoleta.UseVisualStyleBackColor = true;
+            this.Btn_EliminarBoleta.Click += new System.EventHandler(this.Btn_EliminarBoleta_Click);
+            // 
+            // Btn_ModificarBoleta
+            // 
+            this.Btn_ModificarBoleta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ModificarBoleta.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ModificarBoleta.Image")));
+            this.Btn_ModificarBoleta.Location = new System.Drawing.Point(794, 282);
+            this.Btn_ModificarBoleta.Name = "Btn_ModificarBoleta";
+            this.Btn_ModificarBoleta.Size = new System.Drawing.Size(60, 51);
+            this.Btn_ModificarBoleta.TabIndex = 36;
+            this.Btn_ModificarBoleta.UseVisualStyleBackColor = true;
+            this.Btn_ModificarBoleta.Click += new System.EventHandler(this.Btn_ModificarBoleta_Click);
+            // 
             // Frm_BuscarBoleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(932, 753);
+            this.Controls.Add(this.Btn_ModificarBoleta);
+            this.Controls.Add(this.Btn_EliminarBoleta);
+            this.Controls.Add(this.Btn_LimpiarTodo);
             this.Controls.Add(this.Txt_Apellidos);
             this.Controls.Add(this.Lbl_Apellidos);
             this.Controls.Add(this.Txt_Nombres);
@@ -243,5 +281,8 @@ namespace Capa_Vista_Banrural
         private System.Windows.Forms.Label Lbl_Apellidos;
         private System.Windows.Forms.TextBox Txt_Nombres;
         private System.Windows.Forms.Label Lbl_Nombres;
+        private System.Windows.Forms.Button Btn_LimpiarTodo;
+        private System.Windows.Forms.Button Btn_EliminarBoleta;
+        private System.Windows.Forms.Button Btn_ModificarBoleta;
     }
 }

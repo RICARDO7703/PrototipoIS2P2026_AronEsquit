@@ -361,9 +361,9 @@ namespace Capa_Vista_Banrural
             // 
             this.Btn_BuscarDpi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_BuscarDpi.Image = ((System.Drawing.Image)(resources.GetObject("Btn_BuscarDpi.Image")));
-            this.Btn_BuscarDpi.Location = new System.Drawing.Point(456, 196);
+            this.Btn_BuscarDpi.Location = new System.Drawing.Point(456, 192);
             this.Btn_BuscarDpi.Name = "Btn_BuscarDpi";
-            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 47);
+            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 51);
             this.Btn_BuscarDpi.TabIndex = 27;
             this.Btn_BuscarDpi.UseVisualStyleBackColor = true;
             this.Btn_BuscarDpi.Click += new System.EventHandler(this.Btn_BuscarDpi_Click);
@@ -372,9 +372,9 @@ namespace Capa_Vista_Banrural
             // 
             this.Btn_LimpiarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_LimpiarTodo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_LimpiarTodo.Image")));
-            this.Btn_LimpiarTodo.Location = new System.Drawing.Point(522, 196);
+            this.Btn_LimpiarTodo.Location = new System.Drawing.Point(522, 192);
             this.Btn_LimpiarTodo.Name = "Btn_LimpiarTodo";
-            this.Btn_LimpiarTodo.Size = new System.Drawing.Size(60, 47);
+            this.Btn_LimpiarTodo.Size = new System.Drawing.Size(60, 51);
             this.Btn_LimpiarTodo.TabIndex = 28;
             this.Btn_LimpiarTodo.UseVisualStyleBackColor = true;
             this.Btn_LimpiarTodo.Click += new System.EventHandler(this.Btn_LimpiarTodo_Click);

@@ -46,5 +46,15 @@ namespace Capa_Vista_Banrural
         {
 
         }
+
+        private void Btn_ModificarBoleta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_EliminarBoleta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

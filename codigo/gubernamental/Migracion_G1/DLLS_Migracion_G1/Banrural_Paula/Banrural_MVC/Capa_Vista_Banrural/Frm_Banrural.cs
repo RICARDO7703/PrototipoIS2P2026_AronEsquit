@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Capa_Controlador_Banrural; //Referencia Capa Controlador Paula Daniela Leonardo Paredes 0901-22-9580
+using Capa_Controlador_Banrural; // Referencia Capa Controlador
 
-namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
+namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
 {
     public partial class Frm_Banrural : Form
     {
         private readonly Cls_Controlador ctrl = new Cls_Controlador();
+
         // Para guardar el ciudadano encontrado
         private int _idCiudadano = 0;
 
@@ -30,6 +25,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             Txt_Dpi.MaxLength = 13;
         }
 
+        // LOAD
         private void Frm_Banrural_Load(object sender, EventArgs e)
         {
             // Bloquear campos que se llenan automáticamente
@@ -47,7 +43,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             DataTable tipos = ctrl.ObtenerTiposPasaporte();
 
             Cmb_TipoPasaporte.DisplayMember = "Cmp_Tipo_Pasaporte";
-            Cmb_TipoPasaporte.ValueMember = "Cmp_Tipo_Pasaporte";  // 👈 ESTE ES EL FIX
+            Cmb_TipoPasaporte.ValueMember = "Cmp_Tipo_Pasaporte"; // FIX
             Cmb_TipoPasaporte.DataSource = tipos;
 
             Cmb_TipoPasaporte.SelectedIndex = -1;
@@ -56,31 +52,26 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             Txt_TotalPagar.Clear();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // BOTONES (NAVEGACIÓN)
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             Frm_BuscarBoleta frm = new Frm_BuscarBoleta();
-            this.Hide();
+            Hide();
             frm.ShowDialog();
-            this.Show();
+            Show();
         }
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
+        // DPI
         private void Txt_Dpi_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite solo números y tecla borrar
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
                 e.Handled = true;
-            }
         }
 
         private void Txt_Dpi_TextChanged(object sender, EventArgs e)
@@ -95,7 +86,8 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
 
         private void Txt_Dpi_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Txt_Dpi.Text)) return;
+            if (string.IsNullOrWhiteSpace(Txt_Dpi.Text))
+                return;
 
             if (Txt_Dpi.Text.Length != 13)
             {
@@ -109,6 +101,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             }
         }
 
+        // BUSCAR CIUDADANO
         private void Btn_BuscarDpi_Click(object sender, EventArgs e)
         {
             if (Txt_Dpi.Text.Length != 13)
@@ -127,6 +120,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             }
 
             DataRow r = dt.Rows[0];
+
             _idCiudadano = int.Parse(r["Pk_Id_Ciudadano"].ToString());
             Txt_Nombres.Text = r["Cmp_Nombres_Ciudadano"].ToString();
             Txt_Apellidos.Text = r["Cmp_Apellidos_Ciudadano"].ToString();
@@ -143,26 +137,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             return edad;
         }
 
-        private void Txt_Nombres_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_Apellidos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_Edad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Txt_NoBoleta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // BOLETA
         private void Btn_GenerarBoleta_Click(object sender, EventArgs e)
         {
             // Genera de 6 dígitos (puedes cambiar rango)
@@ -177,12 +152,13 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             Txt_NoBoleta.Text = noBoleta.ToString();
         }
 
+        // TIPO / DURACIÓN / PRECIO - PASAPORTE
         private void Cmb_TipoPasaporte_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Cmb_TipoPasaporte.SelectedValue == null) return;
+            if (Cmb_TipoPasaporte.SelectedValue == null)
+                return;
 
             string tipo = Cmb_TipoPasaporte.SelectedValue.ToString();
-
             DataTable dur = ctrl.ObtenerDuracionesPorTipo(tipo);
 
             Cmb_Duracion.DisplayMember = "Cmp_Duracion_Pasaporte";
@@ -195,8 +171,11 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
 
         private void Cmb_Duracion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Cmb_TipoPasaporte.SelectedValue == null) return;
-            if (Cmb_Duracion.SelectedValue == null) return;
+            if (Cmb_TipoPasaporte.SelectedValue == null)
+                return;
+
+            if (Cmb_Duracion.SelectedValue == null)
+                return;
 
             string tipo = Cmb_TipoPasaporte.SelectedValue.ToString();
 
@@ -207,11 +186,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             Txt_TotalPagar.Text = precio.ToString("0.00");
         }
 
-        private void Txt_TotalPagar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // GUARDAR
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             if (_idCiudadano == 0)
@@ -226,13 +201,15 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
                 return;
             }
 
-            if (Cmb_TipoPasaporte.SelectedValue == null || string.IsNullOrWhiteSpace(Cmb_TipoPasaporte.SelectedValue.ToString()))
+            if (Cmb_TipoPasaporte.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(Cmb_TipoPasaporte.SelectedValue.ToString()))
             {
                 MessageBox.Show("Seleccione un tipo de pasaporte.");
                 return;
             }
 
-            if (Cmb_Duracion.SelectedValue == null || string.IsNullOrWhiteSpace(Cmb_Duracion.SelectedValue.ToString()))
+            if (Cmb_Duracion.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(Cmb_Duracion.SelectedValue.ToString()))
             {
                 MessageBox.Show("Seleccione la duración del pasaporte.");
                 return;
@@ -245,7 +222,6 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             }
 
             int noBoleta = int.Parse(Txt_NoBoleta.Text);
-
             string tipo = Cmb_TipoPasaporte.SelectedValue.ToString();
 
             if (!int.TryParse(Cmb_Duracion.SelectedValue.ToString(), out int duracion))
@@ -276,7 +252,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
 
                 if (dr == DialogResult.Yes)
                 {
-                    // ImprimirBoleta();  // lo hacemos después
+                    // ImprimirBoleta(); // Hacer despues
                 }
             }
             else
@@ -285,11 +261,7 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             }
         }
 
-        private void Btn_Imprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // LIMPIAR TODO
         private void Btn_LimpiarTodo_Click(object sender, EventArgs e)
         {
             // Limpiar TextBox
@@ -313,5 +285,16 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
             // Enfocar nuevamente DPI
             Txt_Dpi.Focus();
         }
+
+        // ===============================
+        // EXTRAS (ENLAZADOS AL DESIGNER)
+        // ===============================
+        private void Txt_Nombres_TextChanged(object sender, EventArgs e) { }
+        private void Txt_Apellidos_TextChanged(object sender, EventArgs e) { }
+        private void Txt_Edad_TextChanged(object sender, EventArgs e) { }
+        private void Txt_NoBoleta_TextChanged(object sender, EventArgs e) { }
+        private void Txt_TotalPagar_TextChanged(object sender, EventArgs e) { }
+        private void Btn_Imprimir_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
     }
 }
