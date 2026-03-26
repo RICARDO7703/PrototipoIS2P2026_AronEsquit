@@ -88,7 +88,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-
+    <None Include="Resources\Image1.bmp" />
+    <Content Include="Resources\WhatsApp Image 2026-02-14 at 4.01.39 PM.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Frm_Login.resx">
@@ -103,12 +104,10 @@
     <EmbeddedResource Include="Frm_Recuperar_Contrasena.resx">
       <DependentUpon>Frm_Recuperar_Contrasena.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Splash_MRP.resx">
       <DependentUpon>Splash_MRP.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,7 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gatito.gif" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

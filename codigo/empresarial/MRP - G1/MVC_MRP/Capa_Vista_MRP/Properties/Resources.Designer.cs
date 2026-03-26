@@ -19,7 +19,7 @@ namespace Capa_Vista_MRP.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,7 +63,6 @@ namespace Capa_Vista_MRP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap Fondo_de_Minecraft_para_pc {
             get {
                 object obj = ResourceManager.GetObject("Fondo de Minecraft para pc", resourceCulture);
@@ -97,8 +96,16 @@ namespace Capa_Vista_MRP.Properties {
         internal static System.Drawing.Bitmap gatito_martillando1 {
             get {
                 object obj = ResourceManager.GetObject("gatito martillando1", resourceCulture);
-
-       
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_02_14_at_4_01_39_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2026_02_14_at_4_01_39_PM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
