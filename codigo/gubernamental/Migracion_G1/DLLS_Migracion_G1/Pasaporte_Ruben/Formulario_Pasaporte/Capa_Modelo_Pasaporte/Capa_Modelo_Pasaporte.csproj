@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cls_Conexion_Pasaporte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sentencias_Pasaporte.cs" />
+    <Compile Include="Sentencias_Ver_Pasaporte.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

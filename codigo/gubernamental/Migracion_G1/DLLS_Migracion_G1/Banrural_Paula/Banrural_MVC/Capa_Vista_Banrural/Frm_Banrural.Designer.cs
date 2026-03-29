@@ -55,9 +55,9 @@ namespace Capa_Vista_Banrural
             this.Lbl_TotalPagar = new System.Windows.Forms.Label();
             this.Txt_TotalPagar = new System.Windows.Forms.TextBox();
             this.Btn_Guardar = new System.Windows.Forms.Button();
-            this.Btn_Imprimir = new System.Windows.Forms.Button();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Btn_BuscarDpi = new System.Windows.Forms.Button();
+            this.Btn_LimpiarTodo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Banrural)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,6 +153,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Dpi.Name = "Txt_Dpi";
             this.Txt_Dpi.Size = new System.Drawing.Size(363, 27);
             this.Txt_Dpi.TabIndex = 8;
+            this.Txt_Dpi.TextChanged += new System.EventHandler(this.Txt_Dpi_TextChanged);
             // 
             // Txt_Nombres
             // 
@@ -163,6 +164,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Nombres.Name = "Txt_Nombres";
             this.Txt_Nombres.Size = new System.Drawing.Size(567, 27);
             this.Txt_Nombres.TabIndex = 10;
+            this.Txt_Nombres.TextChanged += new System.EventHandler(this.Txt_Nombres_TextChanged);
             // 
             // Lbl_Nombres
             // 
@@ -184,6 +186,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Apellidos.Name = "Txt_Apellidos";
             this.Txt_Apellidos.Size = new System.Drawing.Size(567, 27);
             this.Txt_Apellidos.TabIndex = 12;
+            this.Txt_Apellidos.TextChanged += new System.EventHandler(this.Txt_Apellidos_TextChanged);
             // 
             // Lbl_Apellidos
             // 
@@ -210,11 +213,13 @@ namespace Capa_Vista_Banrural
             // Txt_NoBoleta
             // 
             this.Txt_NoBoleta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Txt_NoBoleta.Enabled = false;
             this.Txt_NoBoleta.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_NoBoleta.Location = new System.Drawing.Point(117, 374);
             this.Txt_NoBoleta.Name = "Txt_NoBoleta";
             this.Txt_NoBoleta.Size = new System.Drawing.Size(399, 27);
             this.Txt_NoBoleta.TabIndex = 14;
+            this.Txt_NoBoleta.TextChanged += new System.EventHandler(this.Txt_NoBoleta_TextChanged);
             // 
             // Btn_GenerarBoleta
             // 
@@ -228,6 +233,7 @@ namespace Capa_Vista_Banrural
             this.Btn_GenerarBoleta.TabIndex = 15;
             this.Btn_GenerarBoleta.Text = "Generar Boleta";
             this.Btn_GenerarBoleta.UseVisualStyleBackColor = false;
+            this.Btn_GenerarBoleta.Click += new System.EventHandler(this.Btn_GenerarBoleta_Click);
             // 
             // Lbl_Edad
             // 
@@ -249,6 +255,7 @@ namespace Capa_Vista_Banrural
             this.Txt_Edad.Name = "Txt_Edad";
             this.Txt_Edad.Size = new System.Drawing.Size(123, 27);
             this.Txt_Edad.TabIndex = 17;
+            this.Txt_Edad.TextChanged += new System.EventHandler(this.Txt_Edad_TextChanged);
             // 
             // Lbl_TipoPasaporte
             // 
@@ -263,29 +270,33 @@ namespace Capa_Vista_Banrural
             // 
             // Cmb_TipoPasaporte
             // 
+            this.Cmb_TipoPasaporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_TipoPasaporte.FormattingEnabled = true;
             this.Cmb_TipoPasaporte.Location = new System.Drawing.Point(187, 446);
             this.Cmb_TipoPasaporte.Name = "Cmb_TipoPasaporte";
             this.Cmb_TipoPasaporte.Size = new System.Drawing.Size(371, 24);
             this.Cmb_TipoPasaporte.TabIndex = 19;
+            this.Cmb_TipoPasaporte.SelectedIndexChanged += new System.EventHandler(this.Cmb_TipoPasaporte_SelectedIndexChanged);
             // 
             // Cmb_Duracion
             // 
+            this.Cmb_Duracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cmb_Duracion.FormattingEnabled = true;
-            this.Cmb_Duracion.Location = new System.Drawing.Point(705, 446);
+            this.Cmb_Duracion.Location = new System.Drawing.Point(733, 446);
             this.Cmb_Duracion.Name = "Cmb_Duracion";
             this.Cmb_Duracion.Size = new System.Drawing.Size(329, 24);
             this.Cmb_Duracion.TabIndex = 21;
+            this.Cmb_Duracion.SelectedIndexChanged += new System.EventHandler(this.Cmb_Duracion_SelectedIndexChanged);
             // 
             // Lbl_Duracion
             // 
             this.Lbl_Duracion.AutoSize = true;
             this.Lbl_Duracion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Duracion.Location = new System.Drawing.Point(602, 446);
+            this.Lbl_Duracion.Location = new System.Drawing.Point(585, 446);
             this.Lbl_Duracion.Name = "Lbl_Duracion";
-            this.Lbl_Duracion.Size = new System.Drawing.Size(86, 20);
+            this.Lbl_Duracion.Size = new System.Drawing.Size(142, 20);
             this.Lbl_Duracion.TabIndex = 20;
-            this.Lbl_Duracion.Text = "Duración:";
+            this.Lbl_Duracion.Text = "Duración (Años):";
             this.Lbl_Duracion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Lbl_TotalPagar
@@ -307,8 +318,10 @@ namespace Capa_Vista_Banrural
             this.Txt_TotalPagar.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalPagar.Location = new System.Drawing.Point(199, 512);
             this.Txt_TotalPagar.Name = "Txt_TotalPagar";
-            this.Txt_TotalPagar.Size = new System.Drawing.Size(835, 29);
+            this.Txt_TotalPagar.Size = new System.Drawing.Size(863, 29);
             this.Txt_TotalPagar.TabIndex = 23;
+            this.Txt_TotalPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_TotalPagar.TextChanged += new System.EventHandler(this.Txt_TotalPagar_TextChanged);
             // 
             // Btn_Guardar
             // 
@@ -316,27 +329,18 @@ namespace Capa_Vista_Banrural
             this.Btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Guardar.Image")));
             this.Btn_Guardar.Location = new System.Drawing.Point(266, 610);
             this.Btn_Guardar.Name = "Btn_Guardar";
-            this.Btn_Guardar.Size = new System.Drawing.Size(200, 47);
+            this.Btn_Guardar.Size = new System.Drawing.Size(250, 47);
             this.Btn_Guardar.TabIndex = 24;
             this.Btn_Guardar.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Imprimir
-            // 
-            this.Btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Imprimir.Image")));
-            this.Btn_Imprimir.Location = new System.Drawing.Point(472, 610);
-            this.Btn_Imprimir.Name = "Btn_Imprimir";
-            this.Btn_Imprimir.Size = new System.Drawing.Size(200, 47);
-            this.Btn_Imprimir.TabIndex = 25;
-            this.Btn_Imprimir.UseVisualStyleBackColor = true;
+            this.Btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // Btn_Buscar
             // 
             this.Btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Buscar.Image")));
-            this.Btn_Buscar.Location = new System.Drawing.Point(678, 610);
+            this.Btn_Buscar.Location = new System.Drawing.Point(522, 610);
             this.Btn_Buscar.Name = "Btn_Buscar";
-            this.Btn_Buscar.Size = new System.Drawing.Size(200, 47);
+            this.Btn_Buscar.Size = new System.Drawing.Size(250, 47);
             this.Btn_Buscar.TabIndex = 26;
             this.Btn_Buscar.UseVisualStyleBackColor = true;
             this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
@@ -345,11 +349,23 @@ namespace Capa_Vista_Banrural
             // 
             this.Btn_BuscarDpi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_BuscarDpi.Image = ((System.Drawing.Image)(resources.GetObject("Btn_BuscarDpi.Image")));
-            this.Btn_BuscarDpi.Location = new System.Drawing.Point(456, 196);
+            this.Btn_BuscarDpi.Location = new System.Drawing.Point(456, 192);
             this.Btn_BuscarDpi.Name = "Btn_BuscarDpi";
-            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 47);
+            this.Btn_BuscarDpi.Size = new System.Drawing.Size(60, 51);
             this.Btn_BuscarDpi.TabIndex = 27;
             this.Btn_BuscarDpi.UseVisualStyleBackColor = true;
+            this.Btn_BuscarDpi.Click += new System.EventHandler(this.Btn_BuscarDpi_Click);
+            // 
+            // Btn_LimpiarTodo
+            // 
+            this.Btn_LimpiarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_LimpiarTodo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_LimpiarTodo.Image")));
+            this.Btn_LimpiarTodo.Location = new System.Drawing.Point(522, 192);
+            this.Btn_LimpiarTodo.Name = "Btn_LimpiarTodo";
+            this.Btn_LimpiarTodo.Size = new System.Drawing.Size(60, 51);
+            this.Btn_LimpiarTodo.TabIndex = 28;
+            this.Btn_LimpiarTodo.UseVisualStyleBackColor = true;
+            this.Btn_LimpiarTodo.Click += new System.EventHandler(this.Btn_LimpiarTodo_Click);
             // 
             // Frm_Banrural
             // 
@@ -357,9 +373,9 @@ namespace Capa_Vista_Banrural
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 703);
+            this.Controls.Add(this.Btn_LimpiarTodo);
             this.Controls.Add(this.Btn_BuscarDpi);
             this.Controls.Add(this.Btn_Buscar);
-            this.Controls.Add(this.Btn_Imprimir);
             this.Controls.Add(this.Btn_Guardar);
             this.Controls.Add(this.Txt_TotalPagar);
             this.Controls.Add(this.Lbl_TotalPagar);
@@ -388,6 +404,7 @@ namespace Capa_Vista_Banrural
             this.Name = "Frm_Banrural";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Banrural";
+            this.Load += new System.EventHandler(this.Frm_Banrural_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Banrural)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -421,8 +438,8 @@ namespace Capa_Vista_Banrural
         private System.Windows.Forms.Label Lbl_TotalPagar;
         private System.Windows.Forms.TextBox Txt_TotalPagar;
         private System.Windows.Forms.Button Btn_Guardar;
-        private System.Windows.Forms.Button Btn_Imprimir;
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.Button Btn_BuscarDpi;
+        private System.Windows.Forms.Button Btn_LimpiarTodo;
     }
 }
