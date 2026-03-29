@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Capa_Controlador_Navegador;
 using Capa_Vista_Reporteador;
 using Capa_Modelo_Seguridad;
+using Capa_Vista_Componente_Consultas;
 using System.Reflection;
 
 namespace Capa_Vista_Navegador
@@ -67,7 +68,7 @@ namespace Capa_Vista_Navegador
                     Cls_ControladorNavegador controladorNavegador = new Cls_ControladorNavegador();
 
                     // Genera dinámicamente los labels y combos
-                    controladorNavegador.AsignarAlias(SAlias, this, 20, 100, 3, SEtiquetas);
+                    controladorNavegador.AsignarAlias(SAlias, this, 20, 100, SEtiquetas);
                     ctrl.DesactivarTodosComboBoxes(this); // KEVIN NATARENO, 11/10/2025
                 }
                 catch (Exception ex)
@@ -91,6 +92,10 @@ namespace Capa_Vista_Navegador
             
             Btn_ingresar.Enabled = false;
             Btn_guardar.Enabled = true;
+            Btn_modificar.Enabled = false;
+            Btn_eliminar.Enabled = false;
+            Btn_imprimir.Enabled = false;
+            Btn_consultar.Enabled = false;
             Btn_cancelar.Enabled = true;
             mostrarDatos();
             ctrl.ActivarTodosComboBoxes(this);
@@ -280,6 +285,7 @@ namespace Capa_Vista_Navegador
             ctrl.DesactivarTodosComboBoxes(this);
             iContadorModificar = 0;
 
+
         }
 
         private void Btn_guardar_Click_1(object sender, EventArgs e)
@@ -400,7 +406,20 @@ namespace Capa_Vista_Navegador
 
         private void Btn_consultar_Click(object sender, EventArgs e)
         {
-            // Llamar al componente consultas inteligentes
+            if (string.IsNullOrWhiteSpace(SNombreTabla))
+            {
+                MessageBox.Show("No se ha definido el nombre de la tabla.");
+                return;
+            }
+
+            string[] sArr = { SNombreTabla };
+
+            using (var f = new Frm_Consulta_Simple(sArr))
+            {
+                this.Hide();
+                f.ShowDialog(this);
+                this.Show();
+            }
         }
 
         // ======================= Pedro Ibañez =======================
