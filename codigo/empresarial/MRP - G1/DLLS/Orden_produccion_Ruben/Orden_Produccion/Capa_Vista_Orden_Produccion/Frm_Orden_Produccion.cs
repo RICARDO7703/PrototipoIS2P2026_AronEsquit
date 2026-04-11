@@ -30,32 +30,25 @@ namespace Capa_Vista_Orden_Produccion
             };
 
             string[] columnas = {
-                        "tbl_materiales",
-                        "Pk_Id_Materiales",
-                        "Codigo_Material",
-                        "Nombre_Material",
-                        "Descripcion_Material",
-                        "Fk_Id_Categoria",
-                        "Fk_Id_Unidad_Medida",
-                        "Stock_Minimo",
-                        "Stock_Seguridad",
-                        "Lote_Minimo_Compra",
-                        "Lead_Time_Produccion_Dias",
-                        "Activo"
+                        "Tbl_Orden_Produccion",
+                        "Pk_Id_Orden_Produccion",
+                        "Fk_Id_Plan_Produccion",
+                        "Fk_Id_Material",
+                        "Fk_Id_Estado_Orden_Produccion",
+                        "Cantidad_Programada_Orden_Produccion",
+                        "Cantidad_Producida_Orden_Produccion",
+                        "Fecha_Inicio_Orden_Produccion",
+                        "Fecha_Fin_Orden_Produccion"
                      };
 
             string[] sEtiquetas = {
-                        "ID material:",
-                        "Codigo material",
-                        "Nombre material",
-                        "Descripcion material",
-                        "Fk categoria",
-                        "Fk unidad medida",
-                        "Stock minimo",
-                        "Stock seguridad",
-                        "Lote minimo compra",
-                        "produccion dias",
-                        "Activo"
+                        "ID Orden produccion:",
+                        "FK plan produccion:",
+                        "FK material:",
+                        "FK estado orden produccion",
+                        "Cantidad programada:",
+                        "Fecha inicio orden produccion:",
+                        "Fecha fin orden produccion"
                      };
 
             // ─── CONFIGURACIÓN FK ────────────────────────────────────────────────
@@ -63,30 +56,37 @@ namespace Capa_Vista_Orden_Produccion
                 {
                     new Cls_ConfiguracionFK
                     {
-                        CampoFK         = "Fk_Id_Categoria",
-                        TablaReferencia = "tbl_categoria_producto",
-                        CampoPK         = "Pk_Id_Categoria_Producto",
-                        CampoMostrar    = "Nombre_Categoria_Producto",
-                        //FormatoDisplay  = "{PK} - {DISPLAY}",
-
-                        CamposEditables = new List<Cls_CampoEditable>
-                        {
-                            new Cls_CampoEditable { NombreCampo = "Nombre_Categoria_Producto", Etiqueta = "Nombre categoria producto",       SoloLectura = false },
-                        }
+                        CampoFK         = "Fk_Id_Plan_Produccion",
+                        TablaReferencia = "tbl_plan_produccion",
+                        CampoPK         = "Pk_Id_Plan_Produccion",
+                        CampoMostrar    = "Descripcion_Plan_Produccion",
 
                     },
 
+                    new Cls_ConfiguracionFK
+                    {
+                        CampoFK         = "Fk_Id_Material",
+                        TablaReferencia = "tbl_materiales",
+                        CampoPK         = "Pk_Id_Materiales",
+                        CampoMostrar    = "Codigo_Material",
 
-
+                        CamposEditables = new List<Cls_CampoEditable>
+                        {
+                            new Cls_CampoEditable { NombreCampo = "Stock_Minimo",  Etiqueta = "Stock minimo", SoloLectura = false },
+                            new Cls_CampoEditable { NombreCampo = "Activo",  Etiqueta = "Activo", SoloLectura = false },
+                        }
+                    },
 
                     new Cls_ConfiguracionFK
                     {
-                        CampoFK         = "Fk_Id_Unidad_Medida",
-                        TablaReferencia = "tbl_unidad_medida",
-                        CampoPK         = "Pk_Id_Unidad_Medida",
-                        CampoMostrar    = "Nombre_Unidad_Medida",
+                        CampoFK         = "Fk_Id_Estado_Orden_Produccion",
+                        TablaReferencia = "tbl_estado_orden_produccion",
+                        CampoPK         = "Pk_Id_Estado_Orden_Produccion",
+                        CampoMostrar    = "Nombre_Estado_Orden_Produccion"
                     }
                 };
+
+
 
 
             int id_aplicacion = 301;

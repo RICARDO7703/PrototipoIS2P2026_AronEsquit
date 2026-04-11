@@ -41,7 +41,7 @@ namespace Capa_Vista_Orden_Produccion
             this.navegador1.SAlias = null;
             this.navegador1.SConfiguracionFK = null;
             this.navegador1.SEtiquetas = null;
-            this.navegador1.Size = new System.Drawing.Size(1333, 758);
+            this.navegador1.Size = new System.Drawing.Size(1125, 734);
             this.navegador1.SNombreTabla = null;
             this.navegador1.TabIndex = 0;
             // 
@@ -49,7 +49,7 @@ namespace Capa_Vista_Orden_Produccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 827);
+            this.ClientSize = new System.Drawing.Size(1352, 654);
             this.Controls.Add(this.navegador1);
             this.Name = "Frm_Orden_Produccion";
             this.Text = "Frm_Orden_Produccion";
