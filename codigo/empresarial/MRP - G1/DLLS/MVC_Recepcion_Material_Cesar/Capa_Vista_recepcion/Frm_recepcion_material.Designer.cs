@@ -1,7 +1,7 @@
 ﻿
-namespace Capa_vista
+namespace Capa_Vista_recepcion
 {
-    partial class Frm_estado_recepcion_material
+    partial class Frm_recepcion_material
     {
         /// <summary>
         /// Required designer variable.
@@ -36,22 +36,23 @@ namespace Capa_vista
             // 
             this.navegador1.IPkId_Aplicacion = 0;
             this.navegador1.IPkId_Modulo = 0;
-            this.navegador1.Location = new System.Drawing.Point(0, 2);
+            this.navegador1.Location = new System.Drawing.Point(3, 2);
             this.navegador1.Name = "navegador1";
             this.navegador1.SAlias = null;
+            this.navegador1.SConfiguracionFK = null;
             this.navegador1.SEtiquetas = null;
-            this.navegador1.Size = new System.Drawing.Size(1180, 488);
+            this.navegador1.Size = new System.Drawing.Size(1125, 734);
             this.navegador1.SNombreTabla = null;
             this.navegador1.TabIndex = 0;
             // 
-            // Frm_estado_recepcion_material
+            // Frm_recepcion_material
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 698);
+            this.ClientSize = new System.Drawing.Size(1308, 522);
             this.Controls.Add(this.navegador1);
-            this.Name = "Frm_estado_recepcion_material";
-            this.Text = "Frm_estado_recepcion_material";
+            this.Name = "Frm_recepcion_material";
+            this.Text = "Frm_recepcion_material";
             this.ResumeLayout(false);
 
         }
