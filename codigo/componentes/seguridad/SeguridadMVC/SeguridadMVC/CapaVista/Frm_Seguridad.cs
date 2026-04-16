@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Controlador_Seguridad;
 using System.IO;
+using Capa_Vista_Examen_Mantenimiento_Pelicula;
 
 namespace Capa_Vista_Seguridad
 {
@@ -418,6 +419,12 @@ namespace Capa_Vista_Seguridad
             Frm_Usuario frm = new Frm_Usuario();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void peliculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Examen_Mantenimiento_Pelicula.Frm_Pelicula m = new Capa_Vista_Examen_Mantenimiento_Pelicula.Frm_Pelicula();
+            m.Show();
         }
     }
 }
